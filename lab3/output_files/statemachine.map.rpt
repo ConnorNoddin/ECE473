@@ -1,0 +1,493 @@
+Analysis & Synthesis report for statemachine
+Thu Sep 21 18:55:53 2023
+Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |statemachine|control:inst8|current
+  9. User-Specified and Inferred Latches
+ 10. Registers Removed During Synthesis
+ 11. General Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Parameter Settings for User Entity Instance: control:inst8
+ 14. Parameter Settings for User Entity Instance: alu_sp:inst|8faddb:2
+ 15. Post-Synthesis Netlist Statistics for Top Partition
+ 16. Elapsed Time Per Partition
+ 17. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Thu Sep 21 18:55:53 2023       ;
+; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
+; Revision Name                   ; statemachine                                ;
+; Top-level Entity Name           ; statemachine                                ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 21                                          ;
+; Total pins                      ; 36                                          ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0                                           ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CEBA4F23C7        ;                    ;
+; Top-level entity name                                                           ; statemachine       ; statemachine       ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ;   0.0%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                         ;
++----------------------------------+-----------------+------------------------------------------+----------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                                ; File Name with Absolute Path                                         ; Library ;
++----------------------------------+-----------------+------------------------------------------+----------------------------------------------------------------------+---------+
+; statemachine.bdf                 ; yes             ; User Block Diagram/Schematic File        ; C:/ECE473/lab3/statemachine.bdf                                      ;         ;
+; control.v                        ; yes             ; User Verilog HDL File                    ; C:/ECE473/lab3/control.v                                             ;         ;
+; hexdecoder.v                     ; yes             ; User Verilog HDL File                    ; C:/ECE473/lab3/hexdecoder.v                                          ;         ;
+; onedetector.bdf                  ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/ECE473/lab3/onedetector.bdf                                       ;         ;
+; 74377b.bdf                       ; yes             ; Megafunction                             ; c:/intelfpga_lite/20.1/quartus/libraries/others/maxplus2/74377b.bdf  ;         ;
+; enadff.bdf                       ; yes             ; Megafunction                             ; c:/intelfpga_lite/20.1/quartus/libraries/others/maxplus2/enadff.bdf  ;         ;
+; 2x8mux.bdf                       ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/ECE473/lab3/2x8mux.bdf                                            ;         ;
+; alu_sp.bdf                       ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/ECE473/lab3/alu_sp.bdf                                            ;         ;
+; 48mux.bdf                        ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/ECE473/lab3/48mux.bdf                                             ;         ;
+; wire_ex.bdf                      ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/ECE473/lab3/wire_ex.bdf                                           ;         ;
+; 8faddb.tdf                       ; yes             ; Megafunction                             ; c:/intelfpga_lite/20.1/quartus/libraries/others/maxplus2/8faddb.tdf  ;         ;
+; aglobal.inc                      ; yes             ; Megafunction                             ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/aglobal.inc   ;         ;
+; f8faddb.bdf                      ; yes             ; Megafunction                             ; c:/intelfpga_lite/20.1/quartus/libraries/others/maxplus2/f8faddb.bdf ;         ;
++----------------------------------+-----------------+------------------------------------------+----------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimate of Logic utilization (ALMs needed) ; 29        ;
+;                                             ;           ;
+; Combinational ALUT usage for logic          ; 43        ;
+;     -- 7 input functions                    ; 3         ;
+;     -- 6 input functions                    ; 11        ;
+;     -- 5 input functions                    ; 7         ;
+;     -- 4 input functions                    ; 1         ;
+;     -- <=3 input functions                  ; 21        ;
+;                                             ;           ;
+; Dedicated logic registers                   ; 21        ;
+;                                             ;           ;
+; I/O pins                                    ; 36        ;
+;                                             ;           ;
+; Total DSP Blocks                            ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 21        ;
+; Total fan-out                               ; 294       ;
+; Average fan-out                             ; 2.16      ;
++---------------------------------------------+-----------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------+--------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                            ; Entity Name  ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------+--------------+--------------+
+; |statemachine              ; 43 (0)              ; 21 (0)                    ; 0                 ; 0          ; 36   ; 0            ; |statemachine                                  ; statemachine ; work         ;
+;    |2x8mux:inst5|          ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |statemachine|2x8mux:inst5                     ; 2x8mux       ; work         ;
+;    |74377b:inst4|          ; 0 (0)               ; 8 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |statemachine|74377b:inst4                     ; 74377b       ; work         ;
+;       |enadff:10|          ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |statemachine|74377b:inst4|enadff:10           ; enadff       ; work         ;
+;       |enadff:15|          ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |statemachine|74377b:inst4|enadff:15           ; enadff       ; work         ;
+;       |enadff:18|          ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |statemachine|74377b:inst4|enadff:18           ; enadff       ; work         ;
+;       |enadff:19|          ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |statemachine|74377b:inst4|enadff:19           ; enadff       ; work         ;
+;       |enadff:24|          ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |statemachine|74377b:inst4|enadff:24           ; enadff       ; work         ;
+;       |enadff:25|          ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |statemachine|74377b:inst4|enadff:25           ; enadff       ; work         ;
+;       |enadff:2|           ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |statemachine|74377b:inst4|enadff:2            ; enadff       ; work         ;
+;       |enadff:3|           ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |statemachine|74377b:inst4|enadff:3            ; enadff       ; work         ;
+;    |74377b:inst7|          ; 0 (0)               ; 8 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |statemachine|74377b:inst7                     ; 74377b       ; work         ;
+;       |enadff:10|          ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |statemachine|74377b:inst7|enadff:10           ; enadff       ; work         ;
+;       |enadff:15|          ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |statemachine|74377b:inst7|enadff:15           ; enadff       ; work         ;
+;       |enadff:18|          ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |statemachine|74377b:inst7|enadff:18           ; enadff       ; work         ;
+;       |enadff:19|          ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |statemachine|74377b:inst7|enadff:19           ; enadff       ; work         ;
+;       |enadff:24|          ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |statemachine|74377b:inst7|enadff:24           ; enadff       ; work         ;
+;       |enadff:25|          ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |statemachine|74377b:inst7|enadff:25           ; enadff       ; work         ;
+;       |enadff:2|           ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |statemachine|74377b:inst7|enadff:2            ; enadff       ; work         ;
+;       |enadff:3|           ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |statemachine|74377b:inst7|enadff:3            ; enadff       ; work         ;
+;    |OneDetector:inst2|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |statemachine|OneDetector:inst2                ; OneDetector  ; work         ;
+;    |alu_sp:inst|           ; 16 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |statemachine|alu_sp:inst                      ; alu_sp       ; work         ;
+;       |48mux:5|            ; 9 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |statemachine|alu_sp:inst|48mux:5              ; 48mux        ; work         ;
+;          |2x8mux:21|       ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |statemachine|alu_sp:inst|48mux:5|2x8mux:21    ; 2x8mux       ; work         ;
+;       |8faddb:2|           ; 7 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |statemachine|alu_sp:inst|8faddb:2             ; 8faddb       ; work         ;
+;          |f8faddb:sub|     ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |statemachine|alu_sp:inst|8faddb:2|f8faddb:sub ; f8faddb      ; work         ;
+;    |control:inst8|         ; 18 (18)             ; 5 (5)                     ; 0                 ; 0          ; 0    ; 0            ; |statemachine|control:inst8                    ; control      ; work         ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------+--------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------+
+; State Machine - |statemachine|control:inst8|current                         ;
++------------+------------+------------+------------+------------+------------+
+; Name       ; current.s3 ; current.s2 ; current.s1 ; current.s0 ; current.s4 ;
++------------+------------+------------+------------+------------+------------+
+; current.s0 ; 0          ; 0          ; 0          ; 0          ; 0          ;
+; current.s1 ; 0          ; 0          ; 1          ; 1          ; 0          ;
+; current.s2 ; 0          ; 1          ; 0          ; 1          ; 0          ;
+; current.s3 ; 1          ; 0          ; 0          ; 1          ; 0          ;
+; current.s4 ; 0          ; 0          ; 0          ; 1          ; 1          ;
++------------+------------+------------+------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                   ;
++----------------------------------------------------+-------------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal     ; Free of Timing Hazards ;
++----------------------------------------------------+-------------------------+------------------------+
+; control:inst8|wen                                  ; control:inst8|Selector2 ; yes                    ;
+; control:inst8|sel                                  ; GND                     ; yes                    ;
+; control:inst8|fs1                                  ; control:inst8|Selector2 ; yes                    ;
+; control:inst8|fs0                                  ; control:inst8|Selector2 ; yes                    ;
+; control:inst8|next.s4_115                          ; control:inst8|Selector2 ; yes                    ;
+; control:inst8|next.s0_151                          ; control:inst8|Selector2 ; yes                    ;
+; control:inst8|next.s3_124                          ; control:inst8|Selector2 ; yes                    ;
+; control:inst8|next.s2_133                          ; control:inst8|Selector2 ; yes                    ;
+; control:inst8|next.s1_142                          ; control:inst8|Selector2 ; yes                    ;
+; Number of user-specified and inferred latches = 9  ;                         ;                        ;
++----------------------------------------------------+-------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------------+
+; Registers Removed During Synthesis                         ;
++---------------------------------------+--------------------+
+; Register name                         ; Reason for Removal ;
++---------------------------------------+--------------------+
+; control:inst8|current~2               ; Lost fanout        ;
+; control:inst8|current~3               ; Lost fanout        ;
+; Total Number of Removed Registers = 2 ;                    ;
++---------------------------------------+--------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 21    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 8     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
+; 4:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |statemachine|alu_sp:inst|48mux:5|2x8mux:21|23 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
+
+
++------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: control:inst8 ;
++----------------+-------+-----------------------------------+
+; Parameter Name ; Value ; Type                              ;
++----------------+-------+-----------------------------------+
+; s0             ; 0     ; Signed Integer                    ;
+; s1             ; 1     ; Signed Integer                    ;
+; s2             ; 2     ; Signed Integer                    ;
+; s3             ; 3     ; Signed Integer                    ;
+; s4             ; 4     ; Signed Integer                    ;
++----------------+-------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: alu_sp:inst|8faddb:2 ;
++------------------------+-----------+------------------------------+
+; Parameter Name         ; Value     ; Type                         ;
++------------------------+-----------+------------------------------+
+; DEVICE_FAMILY          ; Cyclone V ; Untyped                      ;
+; AUTO_CARRY_CHAINS      ; ON        ; AUTO_CARRY                   ;
+; IGNORE_CARRY_BUFFERS   ; OFF       ; IGNORE_CARRY                 ;
+; AUTO_CASCADE_CHAINS    ; ON        ; AUTO_CASCADE                 ;
+; IGNORE_CASCADE_BUFFERS ; OFF       ; IGNORE_CASCADE               ;
++------------------------+-----------+------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 21                          ;
+;     ENA               ; 8                           ;
+;     plain             ; 13                          ;
+; arriav_lcell_comb     ; 43                          ;
+;     extend            ; 3                           ;
+;         7 data inputs ; 3                           ;
+;     normal            ; 40                          ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 5                           ;
+;         3 data inputs ; 15                          ;
+;         4 data inputs ; 1                           ;
+;         5 data inputs ; 7                           ;
+;         6 data inputs ; 11                          ;
+; boundary_port         ; 36                          ;
+;                       ;                             ;
+; Max LUT depth         ; 5.00                        ;
+; Average LUT depth     ; 2.80                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+    Info: Processing started: Thu Sep 21 18:55:46 2023
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off statemachine -c statemachine
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file statemachine.bdf
+    Info (12023): Found entity 1: statemachine
+Info (12021): Found 1 design units, including 1 entities, in source file control.v
+    Info (12023): Found entity 1: control File: C:/ECE473/lab3/control.v Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file hexdecoder.v
+    Info (12023): Found entity 1: hexdecoder File: C:/ECE473/lab3/hexdecoder.v Line: 2
+Info (12127): Elaborating entity "statemachine" for the top level hierarchy
+Info (12128): Elaborating entity "control" for hierarchy "control:inst8"
+Warning (10235): Verilog HDL Always Construct warning at control.v(26): variable "current" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/ECE473/lab3/control.v Line: 26
+Warning (10235): Verilog HDL Always Construct warning at control.v(30): variable "reset" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/ECE473/lab3/control.v Line: 30
+Warning (10235): Verilog HDL Always Construct warning at control.v(32): variable "one" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/ECE473/lab3/control.v Line: 32
+Warning (10235): Verilog HDL Always Construct warning at control.v(38): variable "x0" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/ECE473/lab3/control.v Line: 38
+Warning (10235): Verilog HDL Always Construct warning at control.v(62): variable "reset" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/ECE473/lab3/control.v Line: 62
+Warning (10235): Verilog HDL Always Construct warning at control.v(92): variable "one" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/ECE473/lab3/control.v Line: 92
+Warning (10235): Verilog HDL Always Construct warning at control.v(98): variable "x0" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/ECE473/lab3/control.v Line: 98
+Warning (10240): Verilog HDL Always Construct warning at control.v(22): inferring latch(es) for variable "sel", which holds its previous value in one or more paths through the always construct File: C:/ECE473/lab3/control.v Line: 22
+Warning (10240): Verilog HDL Always Construct warning at control.v(22): inferring latch(es) for variable "fs1", which holds its previous value in one or more paths through the always construct File: C:/ECE473/lab3/control.v Line: 22
+Warning (10240): Verilog HDL Always Construct warning at control.v(22): inferring latch(es) for variable "fs0", which holds its previous value in one or more paths through the always construct File: C:/ECE473/lab3/control.v Line: 22
+Warning (10240): Verilog HDL Always Construct warning at control.v(22): inferring latch(es) for variable "wen", which holds its previous value in one or more paths through the always construct File: C:/ECE473/lab3/control.v Line: 22
+Warning (10240): Verilog HDL Always Construct warning at control.v(22): inferring latch(es) for variable "next", which holds its previous value in one or more paths through the always construct File: C:/ECE473/lab3/control.v Line: 22
+Info (10041): Inferred latch for "next.s4" at control.v(22) File: C:/ECE473/lab3/control.v Line: 22
+Info (10041): Inferred latch for "next.s3" at control.v(22) File: C:/ECE473/lab3/control.v Line: 22
+Info (10041): Inferred latch for "next.s2" at control.v(22) File: C:/ECE473/lab3/control.v Line: 22
+Info (10041): Inferred latch for "next.s1" at control.v(22) File: C:/ECE473/lab3/control.v Line: 22
+Info (10041): Inferred latch for "next.s0" at control.v(22) File: C:/ECE473/lab3/control.v Line: 22
+Info (10041): Inferred latch for "wen" at control.v(22) File: C:/ECE473/lab3/control.v Line: 22
+Info (10041): Inferred latch for "fs0" at control.v(22) File: C:/ECE473/lab3/control.v Line: 22
+Info (10041): Inferred latch for "fs1" at control.v(22) File: C:/ECE473/lab3/control.v Line: 22
+Info (10041): Inferred latch for "sel" at control.v(22) File: C:/ECE473/lab3/control.v Line: 22
+Warning (12125): Using design file onedetector.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: OneDetector
+Info (12128): Elaborating entity "OneDetector" for hierarchy "OneDetector:inst2"
+Info (12128): Elaborating entity "74377b" for hierarchy "74377b:inst7"
+Info (12130): Elaborated megafunction instantiation "74377b:inst7"
+Info (12128): Elaborating entity "enadff" for hierarchy "74377b:inst7|enadff:15"
+Info (12131): Elaborated megafunction instantiation "74377b:inst7|enadff:15", which is child of megafunction instantiation "74377b:inst7"
+Warning (12090): Entity "2x8mux" obtained from "2x8mux.bdf" instead of from Quartus Prime megafunction library
+Warning (12125): Using design file 2x8mux.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: 2x8mux
+Info (12128): Elaborating entity "2x8mux" for hierarchy "2x8mux:inst5"
+Warning (12125): Using design file alu_sp.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: alu_sp
+Info (12128): Elaborating entity "alu_sp" for hierarchy "alu_sp:inst"
+Warning (12125): Using design file 48mux.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: 48mux
+Info (12128): Elaborating entity "48mux" for hierarchy "alu_sp:inst|48mux:5"
+Warning (12125): Using design file wire_ex.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: wire_ex
+Info (12128): Elaborating entity "wire_ex" for hierarchy "alu_sp:inst|wire_ex:4"
+Info (12128): Elaborating entity "8faddb" for hierarchy "alu_sp:inst|8faddb:2"
+Info (12130): Elaborated megafunction instantiation "alu_sp:inst|8faddb:2"
+Info (12128): Elaborating entity "f8faddb" for hierarchy "alu_sp:inst|8faddb:2|f8faddb:sub" File: c:/intelfpga_lite/20.1/quartus/libraries/others/maxplus2/8faddb.tdf Line: 24
+Info (12131): Elaborated megafunction instantiation "alu_sp:inst|8faddb:2|f8faddb:sub", which is child of megafunction instantiation "alu_sp:inst|8faddb:2" File: c:/intelfpga_lite/20.1/quartus/libraries/others/maxplus2/8faddb.tdf Line: 24
+Info (12128): Elaborating entity "hexdecoder" for hierarchy "hexdecoder:inst128"
+Warning (10240): Verilog HDL Always Construct warning at hexdecoder.v(6): inferring latch(es) for variable "out", which holds its previous value in one or more paths through the always construct File: C:/ECE473/lab3/hexdecoder.v Line: 6
+Info (10041): Inferred latch for "out[0]" at hexdecoder.v(51) File: C:/ECE473/lab3/hexdecoder.v Line: 51
+Info (10041): Inferred latch for "out[1]" at hexdecoder.v(51) File: C:/ECE473/lab3/hexdecoder.v Line: 51
+Info (10041): Inferred latch for "out[2]" at hexdecoder.v(51) File: C:/ECE473/lab3/hexdecoder.v Line: 51
+Info (10041): Inferred latch for "out[3]" at hexdecoder.v(51) File: C:/ECE473/lab3/hexdecoder.v Line: 51
+Info (10041): Inferred latch for "out[4]" at hexdecoder.v(51) File: C:/ECE473/lab3/hexdecoder.v Line: 51
+Info (10041): Inferred latch for "out[5]" at hexdecoder.v(51) File: C:/ECE473/lab3/hexdecoder.v Line: 51
+Info (10041): Inferred latch for "out[6]" at hexdecoder.v(51) File: C:/ECE473/lab3/hexdecoder.v Line: 51
+Info (13014): Ignored 27 buffer(s)
+    Info (13015): Ignored 7 CARRY buffer(s)
+    Info (13019): Ignored 20 SOFT buffer(s)
+Info (13025): Duplicate LATCH primitives merged into single LATCH primitive
+    Info (13026): Duplicate LATCH primitive "control:inst8|next.s2_133" merged with LATCH primitive "control:inst8|wen" File: C:/ECE473/lab3/control.v Line: 22
+Warning (13012): Latch control:inst8|wen has unsafe behavior File: C:/ECE473/lab3/control.v Line: 6
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal control:inst8|current.s0 File: C:/ECE473/lab3/control.v Line: 12
+Warning (13012): Latch control:inst8|fs1 has unsafe behavior File: C:/ECE473/lab3/control.v Line: 8
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal control:inst8|current.s0 File: C:/ECE473/lab3/control.v Line: 12
+Warning (13012): Latch control:inst8|fs0 has unsafe behavior File: C:/ECE473/lab3/control.v Line: 9
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal control:inst8|current.s0 File: C:/ECE473/lab3/control.v Line: 12
+Warning (13012): Latch control:inst8|next.s4_115 has unsafe behavior File: C:/ECE473/lab3/control.v Line: 22
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal control:inst8|current.s0 File: C:/ECE473/lab3/control.v Line: 12
+Warning (13012): Latch control:inst8|next.s0_151 has unsafe behavior File: C:/ECE473/lab3/control.v Line: 22
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal reset
+Warning (13012): Latch control:inst8|next.s1_142 has unsafe behavior File: C:/ECE473/lab3/control.v Line: 22
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal reset
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 2 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 99 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 10 input pins
+    Info (21059): Implemented 26 output pins
+    Info (21061): Implemented 63 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 32 warnings
+    Info: Peak virtual memory: 4811 megabytes
+    Info: Processing ended: Thu Sep 21 18:55:53 2023
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:17
+
+

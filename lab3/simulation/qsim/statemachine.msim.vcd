@@ -1,0 +1,490 @@
+$comment
+	File created using the following command:
+		vcd file statemachine.msim.vcd -direction
+$end
+$date
+	Thu Sep 28 14:11:40 2023
+$end
+$version
+	ModelSim Version 2020.1
+$end
+$timescale
+	1ps
+$end
+
+$scope module statemachine_vlg_vec_tst $end
+$var reg 1 ! clk $end
+$var reg 8 " in [7:0] $end
+$var reg 1 # reset $end
+$var wire 1 $ sel $end
+$var wire 1 % wen $end
+$var wire 1 & x [7] $end
+$var wire 1 ' x [6] $end
+$var wire 1 ( x [5] $end
+$var wire 1 ) x [4] $end
+$var wire 1 * x [3] $end
+$var wire 1 + x [2] $end
+$var wire 1 , x [1] $end
+$var wire 1 - x [0] $end
+$var wire 1 . y [7] $end
+$var wire 1 / y [6] $end
+$var wire 1 0 y [5] $end
+$var wire 1 1 y [4] $end
+$var wire 1 2 y [3] $end
+$var wire 1 3 y [2] $end
+$var wire 1 4 y [1] $end
+$var wire 1 5 y [0] $end
+$var wire 1 6 z [7] $end
+$var wire 1 7 z [6] $end
+$var wire 1 8 z [5] $end
+$var wire 1 9 z [4] $end
+$var wire 1 : z [3] $end
+$var wire 1 ; z [2] $end
+$var wire 1 < z [1] $end
+$var wire 1 = z [0] $end
+
+$scope module i1 $end
+$var wire 1 > gnd $end
+$var wire 1 ? vcc $end
+$var wire 1 @ unknown $end
+$var tri1 1 A devclrn $end
+$var tri1 1 B devpor $end
+$var tri1 1 C devoe $end
+$var wire 1 D ~QUARTUS_CREATED_GND~I_combout $end
+$var wire 1 E reset~input_o $end
+$var wire 1 F clk~input_o $end
+$var wire 1 G clk~inputCLKENA0_outclk $end
+$var wire 1 H in[6]~input_o $end
+$var wire 1 I inst8|comb~0_combout $end
+$var wire 1 J inst8|sel~combout $end
+$var wire 1 K in[0]~input_o $end
+$var wire 1 L inst4|2|3~q $end
+$var wire 1 M in[1]~input_o $end
+$var wire 1 N inst4|3|3~q $end
+$var wire 1 O in[4]~input_o $end
+$var wire 1 P in[5]~input_o $end
+$var wire 1 Q inst4|19|3~q $end
+$var wire 1 R in[3]~input_o $end
+$var wire 1 S inst7|15|3~q $end
+$var wire 1 T in[2]~input_o $end
+$var wire 1 U inst4|10|3~q $end
+$var wire 1 V inst|2|sub|202~combout $end
+$var wire 1 W inst|5|21|11~0_combout $end
+$var wire 1 X inst5|11~0_combout $end
+$var wire 1 Y inst7|10|3~q $end
+$var wire 1 Z inst|2|sub|209~0_combout $end
+$var wire 1 [ inst|5|21|12~0_combout $end
+$var wire 1 \ inst5|12~0_combout $end
+$var wire 1 ] inst4|15|3~q $end
+$var wire 1 ^ inst4|18|3~q $end
+$var wire 1 _ inst|5|21|18~1_combout $end
+$var wire 1 ` inst|5|21|18~0_combout $end
+$var wire 1 a inst5|18~0_combout $end
+$var wire 1 b inst7|19|3~q $end
+$var wire 1 c inst|2|sub|218~combout $end
+$var wire 1 d inst|5|21|17~0_combout $end
+$var wire 1 e inst5|17~0_combout $end
+$var wire 1 f inst7|18|3~q $end
+$var wire 1 g inst2|inst~0_combout $end
+$var wire 1 h inst8|current.s2~q $end
+$var wire 1 i inst8|next.s3_124~combout $end
+$var wire 1 j inst8|current.s3~q $end
+$var wire 1 k inst8|Selector12~0_combout $end
+$var wire 1 l inst8|fs1~combout $end
+$var wire 1 m inst|5|21|6~0_combout $end
+$var wire 1 n inst5|6~0_combout $end
+$var wire 1 o inst7|3|3~q $end
+$var wire 1 p inst|5|21|5~0_combout $end
+$var wire 1 q inst5|5~0_combout $end
+$var wire 1 r inst7|2|3~q $end
+$var wire 1 s inst8|Selector0~0_combout $end
+$var wire 1 t inst8|next.s4_115~combout $end
+$var wire 1 u inst8|current.s4~q $end
+$var wire 1 v inst8|Selector8~0_combout $end
+$var wire 1 w inst8|Selector10~0_combout $end
+$var wire 1 x inst8|fs0~combout $end
+$var wire 1 y in[7]~input_o $end
+$var wire 1 z inst4|25|3~q $end
+$var wire 1 { inst|2|sub|242~0_combout $end
+$var wire 1 | inst4|24|3~q $end
+$var wire 1 } inst|2|sub|225~0_combout $end
+$var wire 1 ~ inst|2|sub|242~combout $end
+$var wire 1 !! inst5|24~0_combout $end
+$var wire 1 "! inst7|25|3~q $end
+$var wire 1 #! inst|2|sub|234~combout $end
+$var wire 1 $! inst|5|21|23~0_combout $end
+$var wire 1 %! inst5|23~0_combout $end
+$var wire 1 &! inst7|24|3~q $end
+$var wire 1 '! inst8|Selector4~0_combout $end
+$var wire 1 (! inst8|next.s1_142~combout $end
+$var wire 1 )! inst8|current.s1~q $end
+$var wire 1 *! inst8|Selector6~0_combout $end
+$var wire 1 +! inst8|next.s0_151~combout $end
+$var wire 1 ,! inst8|current.s0~0_combout $end
+$var wire 1 -! inst8|current.s0~q $end
+$var wire 1 .! inst8|Selector2~0_combout $end
+$var wire 1 /! inst8|Selector8~1_combout $end
+$var wire 1 0! inst8|wen~combout $end
+$var wire 1 1! inst|5|21|24~0_combout $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0!
+b1 "
+0#
+0$
+0%
+0-
+0,
+0+
+0*
+0)
+0(
+0'
+0&
+05
+04
+03
+02
+01
+00
+0/
+0.
+0=
+0<
+0;
+0:
+09
+08
+07
+06
+0>
+1?
+x@
+1A
+1B
+1C
+0D
+0E
+0F
+0G
+0H
+0I
+0J
+1K
+0L
+0M
+0N
+0O
+0P
+0Q
+0R
+0S
+0T
+0U
+0V
+0W
+0X
+0Y
+0Z
+0[
+0\
+0]
+0^
+1_
+0`
+0a
+0b
+0c
+0d
+0e
+0f
+0g
+0h
+0i
+0j
+1k
+xl
+0m
+0n
+0o
+0p
+1q
+0r
+1s
+xt
+0u
+0v
+0w
+0x
+0y
+0z
+0{
+0|
+0}
+0~
+0!!
+0"!
+0#!
+0$!
+0%!
+0&!
+0'!
+0(!
+0)!
+0*!
+0+!
+1,!
+0-!
+0.!
+0/!
+00!
+01!
+$end
+#10000
+1#
+1E
+1.!
+1I
+1l
+1t
+#20000
+1!
+1F
+1G
+1-!
+1u
+1r
+1L
+15
+1-
+0s
+0I
+1/!
+1w
+1g
+0/!
+1'!
+0w
+0k
+1x
+10!
+1J
+0t
+1$
+1%
+0x
+0l
+0q
+1m
+1(!
+00!
+0%
+1<
+1n
+1p
+0m
+0<
+1=
+0n
+1q
+#40000
+0!
+0F
+0G
+#60000
+0#
+1!
+0E
+1F
+1G
+1)!
+0u
+1v
+#80000
+0!
+0F
+0G
+#100000
+1!
+1F
+1G
+#120000
+0!
+0F
+0G
+#140000
+1!
+1F
+1G
+#160000
+0!
+0F
+0G
+#180000
+1!
+1F
+1G
+#200000
+0!
+0F
+0G
+#220000
+1!
+1F
+1G
+#240000
+0!
+0F
+0G
+#260000
+1!
+1F
+1G
+#280000
+0!
+0F
+0G
+#300000
+1!
+1F
+1G
+#320000
+0!
+0F
+0G
+#340000
+1!
+1F
+1G
+#360000
+0!
+0F
+0G
+#380000
+1!
+1F
+1G
+#400000
+0!
+0F
+0G
+#420000
+1!
+1F
+1G
+#440000
+0!
+0F
+0G
+#460000
+1!
+1F
+1G
+#480000
+0!
+0F
+0G
+#500000
+1!
+1F
+1G
+#520000
+0!
+0F
+0G
+#540000
+1!
+1F
+1G
+#560000
+0!
+0F
+0G
+#580000
+1!
+1F
+1G
+#600000
+0!
+0F
+0G
+#620000
+1!
+1F
+1G
+#640000
+0!
+0F
+0G
+#660000
+1!
+1F
+1G
+#680000
+0!
+0F
+0G
+#700000
+1!
+1F
+1G
+#720000
+0!
+0F
+0G
+#740000
+1!
+1F
+1G
+#760000
+0!
+0F
+0G
+#780000
+1!
+1F
+1G
+#800000
+0!
+0F
+0G
+#820000
+1!
+1F
+1G
+#840000
+0!
+0F
+0G
+#860000
+1!
+1F
+1G
+#880000
+0!
+0F
+0G
+#900000
+1!
+1F
+1G
+#920000
+0!
+0F
+0G
+#940000
+1!
+1F
+1G
+#960000
+0!
+0F
+0G
+#980000
+1!
+1F
+1G
+#1000000
