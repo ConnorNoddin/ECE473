@@ -1,0 +1,29 @@
+`include "riscv_defs.v"
+
+//Preprocessor statements for extracting immediate bits
+`define UIMM20 {inst[31:12], 12'b0}
+`define IIMM12 {{20{inst[31]}}, inst[31:20]}
+`define BIMM   {{19{inst[31]}}, inst[31], inst[7], inst[30:25], inst[11:8], 1'b0}
+`define JIMM20 {{12{inst[31]}}, inst[19:12], inst[20], inst[30:25], inst[24:21], 1'b0}
+`define STIMM  {{20{inst[31]}}, inst[31:25], inst[11:7]}
+`define SHAMT  inst[24:20] 
+
+
+module decoder(
+	input wire [31:0] inst, //32 bit instruction from instruction memory
+	input wire clk, //Clock signal
+	output reg [6:0] opcode,
+	output reg [5:0] rd,
+	output reg [5:0] rs1,
+	output reg [5:0] rs2,
+	output reg [31:0] imm,
+	output reg[2:0] funct3,
+	output reg[6:0] funct7); //Output string
+	
+always @(posedge clk)	begin
+
+
+end
+	
+endmodule
+

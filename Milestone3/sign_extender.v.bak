@@ -1,0 +1,22 @@
+module sign_extender(
+	input wire [2:0] funct3, //32 bit instruction from instruction memory
+	input wire [6:0] funct7,
+	input wire [6:0] opcode,
+	output reg AluSrc); //Output string
+	
+always begin
+	
+// R Type Opcodes
+if(opcode == 7'b0110011) begin
+		AluSrc = 1'b0;
+	end
+	
+// I Type Opcodes
+else if(opcode == 7'b0010011) begin
+		AluSrc = 1'b1;
+	end
+	
+end
+	
+endmodule
+
