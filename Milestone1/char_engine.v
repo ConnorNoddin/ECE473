@@ -81,8 +81,8 @@ module char_engine(
 	reg [((yourname_chars*8)-1):0] yourname = "CONNOR NODDIN";	//put your name in " "
 	parameter yourname_chars = 13;										//# of characters, including spaces/other punct.
 	
-	reg [(partname_chars*8):0] partname = "TBD";		//partners name in " "
-	parameter partname_chars = 3;									//# of characters, including spaces/other punct.
+	reg [(partname_chars*8):0] partname = "NIK J";		//partners name in " "
+	parameter partname_chars = 5;									//# of characters, including spaces/other punct.
 	
 	reg [7:0] group_num = "1";											//Enter your group number here
 	

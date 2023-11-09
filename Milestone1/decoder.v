@@ -242,8 +242,12 @@ always begin
 					rs2[4:0] = inst[24:20];
 					funct3[2:0] = inst[14:12];
 					funct7[6:0] = 7'b0;
-					imm[4:0] = inst[11:7];
-					imm[11:5] = inst[31:25];
+					imm[11] = inst[7];
+					imm[4:1] = inst[11:8];
+					imm[12] = inst[31];
+					imm[10:5] = inst[30:25];
+					imm[0] = 1'd0;
+					imm = imm >> 2;
 					end
 			
 			//U

@@ -1049,7 +1049,7 @@ https://fpgasoftware.intel.com/eula.
 		(type "PARAMETER_SIGNED_DEC")	)
 	(parameter
 		"partname_chars"
-		"3"
+		"5"
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
 	(parameter

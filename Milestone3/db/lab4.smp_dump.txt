@@ -1,9 +1,0 @@
-
-State Machine - |top|decoder:inst5|instruction_class
-Name instruction_class.101 instruction_class.100 instruction_class.011 instruction_class.010 instruction_class.001 instruction_class.000 
-instruction_class.000 0 0 0 0 0 0 
-instruction_class.001 0 0 0 0 1 1 
-instruction_class.010 0 0 0 1 0 1 
-instruction_class.011 0 0 1 0 0 1 
-instruction_class.100 0 1 0 0 0 1 
-instruction_class.101 1 0 0 0 0 1 

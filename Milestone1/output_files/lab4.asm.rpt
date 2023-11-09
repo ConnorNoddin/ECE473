@@ -1,5 +1,5 @@
 Assembler report for lab4
-Mon Nov 06 16:14:08 2023
+Thu Nov 09 16:04:07 2023
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -38,7 +38,7 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Mon Nov 06 16:14:08 2023 ;
+; Assembler Status      ; Successful - Thu Nov 09 16:04:07 2023 ;
 ; Revision Name         ; lab4                                  ;
 ; Top-level Entity Name ; top                                   ;
 ; Family                ; Cyclone V                             ;
@@ -67,8 +67,8 @@ https://fpgasoftware.intel.com/eula.
 +----------------+--------------------------------------------------------------------------+
 ; Option         ; Setting                                                                  ;
 +----------------+--------------------------------------------------------------------------+
-; JTAG usercode  ; 0x0175F564                                                               ;
-; Checksum       ; 0x0175F564                                                               ;
+; JTAG usercode  ; 0x0179D9AC                                                               ;
+; Checksum       ; 0x0179D9AC                                                               ;
 +----------------+--------------------------------------------------------------------------+
 
 
@@ -78,12 +78,12 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Mon Nov 06 16:14:04 2023
+    Info: Processing started: Thu Nov 09 16:04:03 2023
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off lab4 -c lab4
 Info (115030): Assembler is generating device programming files
 Info: Quartus Prime Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 4866 megabytes
-    Info: Processing ended: Mon Nov 06 16:14:08 2023
+    Info: Peak virtual memory: 4869 megabytes
+    Info: Processing ended: Thu Nov 09 16:04:07 2023
     Info: Elapsed time: 00:00:04
     Info: Total CPU time (on all processors): 00:00:04
 

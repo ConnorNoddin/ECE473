@@ -41,6 +41,23 @@ else if(opcode == 7'b0100011) begin
 		RegWrite = 1'b0;
 	end
 	
+		// B Type Opcodes Loads (branches)
+else if(opcode == 7'b1100011) begin
+		AluSrc = 1'b0;
+		DataRead = 1'b0; // Doesnt Matter
+		MemWrite = 1'b0;
+		RegWrite = 1'b0;
+	end
+	
+		
+		// B Type Opcodes Loads (branches)
+else if(opcode == 7'b0000000) begin
+		AluSrc = 1'b0;
+		DataRead = 1'b0; // Doesnt Matter
+		MemWrite = 1'b0;
+		RegWrite = 1'b0;
+	end
+	
 end
 	
 endmodule

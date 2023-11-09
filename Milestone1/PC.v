@@ -7,6 +7,8 @@ module PC(
 	input wire clock,
 	input wire reset,
 	input wire [31:0] next, //PC takes 32 bit input from add four
+	input wire [31:0] IMM,
+	input wire branchtaken,
 	output reg [31:0] PC); //Output is PC
 	
 	integer count = 32'd0;
@@ -17,12 +19,15 @@ module PC(
 			PC <= 32'd0; //Reset back to 0
 			count = 0;
 		end else if (count != 0) begin
-			PC <= next;
+			if (branchtaken == 1'b1) begin
+				PC <= PC + IMM - 2;
+			end else begin
+				PC <= next;
+			end
 		end else begin
 			count = count + 1;
 		end
 
 	end
-
 	
 endmodule
